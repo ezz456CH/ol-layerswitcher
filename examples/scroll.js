@@ -40,8 +40,7 @@
             type: 'base',
             visible: false,
             source: new ol.source.OSM({
-              url:
-                'http://{a-c}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png',
+              url: 'http://{a-c}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png',
               attributions: thunderforestAttributions
             })
           }),
@@ -50,8 +49,7 @@
             type: 'base',
             visible: false,
             source: new ol.source.OSM({
-              url:
-                'http://{a-c}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+              url: 'http://{a-c}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
               attributions: thunderforestAttributions
             })
           }),
@@ -60,8 +58,7 @@
             type: 'base',
             visible: false,
             source: new ol.source.OSM({
-              url:
-                'http://{a-c}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
+              url: 'http://{a-c}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
               attributions: thunderforestAttributions
             })
           }),
@@ -70,8 +67,7 @@
             type: 'base',
             visible: false,
             source: new ol.source.OSM({
-              url:
-                'http://{a-c}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png',
+              url: 'http://{a-c}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png',
               attributions: thunderforestAttributions
             })
           }),
@@ -93,8 +89,7 @@
             source: new ol.source.ImageArcGISRest({
               ratio: 1,
               params: { LAYERS: 'show:2' },
-              url:
-                'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
+              url: 'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
             })
           })
         ]

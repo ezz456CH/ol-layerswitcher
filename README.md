@@ -45,7 +45,9 @@ The examples demonstrate usage and can be viewed online thanks to [raw.githack.c
 ```
 
 - [Start with panel active](http://raw.githack.com/walkermatt/ol-layerswitcher/master/examples/startactive-click.html)
+
   - Example with the layer switcher starting open using `startActive: true`. Here shown in combination with \`activationMode: 'click' which, while not required, is probably the most common scenario.
+
 - [Multiple maps](http://raw.githack.com/walkermatt/ol-layerswitcher/master/examples/two-maps.html)
 
   - Demonstrates creating two independent maps each with a layer switcher control.
@@ -254,7 +256,7 @@ Set the map instance the control is associated with.
 
 ##### Parameters
 
-- `map` **[Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html)** The map instance.
+- `map` **OlMap** The map instance.
 
 Returns **void**
 
@@ -278,11 +280,11 @@ Returns **void**
 
 #### renderPanel
 
-**_[static]_** - Re-draw the layer panel to represent the current state of the layers.
+**_\[static]_** - Re-draw the layer panel to represent the current state of the layers.
 
 ##### Parameters
 
-- `map` **[Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html)** The OpenLayers Map instance to render layers for
+- `map` **OlMap** The OpenLayers Map instance to render layers for
 - `panel` **[HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element)** The DOM Element into which the layer tree will be rendered
 - `options` **[RenderOptions](#renderoptions)** Options for panel, group, and layers
 
@@ -290,42 +292,42 @@ Returns **void**
 
 #### isBaseGroup
 
-**_[static]_** - Determine if a given layer group contains base layers
+**_\[static]_** - Determine if a given layer group contains base layers
 
 ##### Parameters
 
-- `grp` **[LayerGroup](https://openlayers.org/en/latest/apidoc/module-ol_layer_Group-LayerGroup.html)** Group to test
+- `grp` **LayerGroup** Group to test
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
 #### getGroupsAndLayers
 
-**_[static]_** - Get an Array of all layers and groups displayed by the LayerSwitcher (has a `'title'` property)
+**_\[static]_** - Get an Array of all layers and groups displayed by the LayerSwitcher (has a `'title'` property)
 contained by the specified map or layer group; optionally filtering via `filterFn`
 
 ##### Parameters
 
-- `grp` **([Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html) | [LayerGroup](https://openlayers.org/en/latest/apidoc/module-ol_layer_Group-LayerGroup.html))** The map or layer group for which layers are found.
-- `filterFn` **function (lyr: [BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html), idx: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), arr: [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html)>): [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Optional function used to filter the returned layers
+- `grp` **(OlMap | LayerGroup)** The map or layer group for which layers are found.
+- `filterFn` **function (lyr: BaseLayer, idx: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), arr: [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<BaseLayer>): [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Optional function used to filter the returned layers
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html)>**
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<[BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html)>**
 
 #### forEachRecursive
 
-**_[static]_** - Call the supplied function for each layer in the passed layer group
+**_\[static]_** - Call the supplied function for each layer in the passed layer group
 recursing nested groups.
 
 ##### Parameters
 
-- `lyr` **([Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html) | [LayerGroup](https://openlayers.org/en/latest/apidoc/module-ol_layer_Group-LayerGroup.html))** The layer group to start iterating from.
-- `fn` **function (lyr: [BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html), idx: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), arr: [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[BaseLayer](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base-BaseLayer.html)>): void** Callback which will be called for each layer
+- `lyr` **(OlMap | LayerGroup)** The layer group to start iterating from.
+- `fn` **function (lyr: BaseLayer, idx: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), arr: [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<BaseLayer>): void** Callback which will be called for each layer
   found under `lyr`.
 
 Returns **void**
 
 #### uuid
 
-**_[static]_** - Generate a UUID
+**_\[static]_** - Generate a UUID
 Adapted from <http://stackoverflow.com/a/2117523/526860>
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** UUID
@@ -352,7 +354,7 @@ Event triggered after the panel has been hidden.
 
 **Extends ControlOptions, RenderOptions**
 
-**_[interface]_** - LayerSwitcher Options specified when creating a LayerSwitcher
+**_\[interface]_** - LayerSwitcher Options specified when creating a LayerSwitcher
 instance, extends [RenderOptions](#renderoptions) and
 [Control Options](https://openlayers.org/en/latest/apidoc/module-ol_control_Control-Control.html#Control).
 
@@ -376,7 +378,7 @@ Default values:
 Event to use on the button to collapse or expand the panel. Defaults to
 `"mouseover"`.
 
-Type: (`"mouseover"` \| `"click"`)
+Type: (`"mouseover"` | `"click"`)
 
 #### startActive
 
@@ -410,7 +412,7 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 ### RenderOptions
 
-**_[interface]_** - LayerSwitcher Render Options as passed to [LayerSwitcher
+**_\[interface]_** - LayerSwitcher Render Options as passed to [LayerSwitcher
 constructor](#layerswitcher) as part of [Options](#options) and [static
 LayerSwitcher.renderPanel](#renderpanel)
 
@@ -428,19 +430,19 @@ Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Glob
 
 ### GroupSelectStyle
 
-**_[type]_** - How layers and groups behave when a given layer's visibility is set, either:
+**_\[type]_** - How layers and groups behave when a given layer's visibility is set, either:
 
 - `'none'` - groups don't get a checkbox,
 - `'children'` (default) groups have a checkbox and affect child visibility or
 - `'group'` groups have a checkbox but do not alter child visibility (like QGIS).
 
-Type: (`"none"` \| `"children"` \| `"group"`)
+Type: (`"none"` | `"children"` | `"group"`)
 
 ### BaseLayerOptions
 
 **Extends [ol/layer/Base~Options](https://openlayers.org/en/latest/apidoc/module-ol_layer_Base.html#~Options)**
 
-**_[interface]_** - Extended BaseLayer Options interface adding properties
+**_\[interface]_** - Extended BaseLayer Options interface adding properties
 used by the LayerSwitcher
 
 #### title
@@ -460,7 +462,7 @@ Type: `"base"`
 
 **Extends [ol/layer/Group~Options](https://openlayers.org/en/latest/apidoc/module-ol_layer_Group.html#~Options), BaseLayerOptions**
 
-**_[interface]_** - Extended LayerGroup Options interface adding
+**_\[interface]_** - Extended LayerGroup Options interface adding
 properties used by the LayerSwitcher.
 
 #### combine
@@ -474,7 +476,7 @@ Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Glob
 Fold state of the group, if set then the group will be displayed with a
 button to allow the user to show/ hide the child layers.
 
-Type: (`"open"` \| `"close"`)
+Type: (`"open"` | `"close"`)
 
 ## Tests
 

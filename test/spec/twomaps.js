@@ -136,27 +136,33 @@ describe('ol.control.LayerSwitcher - Two maps', function () {
       expect(foo2.getVisible()).to.be(false);
       expect(too2.getVisible()).to.be(true);
       // Set map1 base map to "Too"
-      jQuery('#map1 .layer-switcher label:contains("Too")').siblings('input').click();
+      jQuery('#map1 .layer-switcher label:contains("Too")')
+        .siblings('input')
+        .click();
       // Assert expected layer visibility and radio button state
       expect(foo1.getVisible()).to.be(false);
       expect(
-        jQuery('#map1 .layer-switcher label:contains("Foo")').siblings('input').get(0)
-          .checked
+        jQuery('#map1 .layer-switcher label:contains("Foo")')
+          .siblings('input')
+          .get(0).checked
       ).to.be(false);
       expect(too1.getVisible()).to.be(true);
       expect(
-        jQuery('#map1 .layer-switcher label:contains("Too")').siblings('input').get(0)
-          .checked
+        jQuery('#map1 .layer-switcher label:contains("Too")')
+          .siblings('input')
+          .get(0).checked
       ).to.be(true);
       expect(foo2.getVisible()).to.be(false);
       expect(
-        jQuery('#map2 .layer-switcher label:contains("Foo")').siblings('input').get(0)
-          .checked
+        jQuery('#map2 .layer-switcher label:contains("Foo")')
+          .siblings('input')
+          .get(0).checked
       ).to.be(false);
       expect(too2.getVisible()).to.be(true);
       expect(
-        jQuery('#map2 .layer-switcher label:contains("Too")').siblings('input').get(0)
-          .checked
+        jQuery('#map2 .layer-switcher label:contains("Too")')
+          .siblings('input')
+          .get(0).checked
       ).to.be(true);
     });
   });

@@ -72,8 +72,7 @@
                 source: new ol.source.ImageArcGISRest({
                   ratio: 1,
                   params: { LAYERS: 'show:3' },
-                  url:
-                    'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
+                  url: 'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
                 })
               }),
               new ol.layer.Image({
@@ -83,8 +82,7 @@
                 source: new ol.source.ImageArcGISRest({
                   ratio: 1,
                   params: { LAYERS: 'show:2' },
-                  url:
-                    'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
+                  url: 'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
                 })
               })
             ]
@@ -96,8 +94,7 @@
             source: new ol.source.ImageArcGISRest({
               ratio: 1,
               params: { LAYERS: 'show:1' },
-              url:
-                'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
+              url: 'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
             })
           }),
           new ol.layer.Image({
@@ -107,8 +104,7 @@
             source: new ol.source.ImageArcGISRest({
               ratio: 1,
               params: { LAYERS: 'show:0' },
-              url:
-                'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
+              url: 'https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/USA/MapServer'
             })
           })
         ]

@@ -264,7 +264,7 @@ interface RenderOptions {
  * - `'children'` (default) groups have a checkbox and affect child visibility or
  * - `'group'` groups have a checkbox but do not alter child visibility (like QGIS).
  */
-declare type GroupSelectStyle = 'none' | 'children' | 'group';
+type GroupSelectStyle = 'none' | 'children' | 'group';
 /**
  * **_[interface]_** - Extended BaseLayer Options interface adding properties
  * used by the LayerSwitcher

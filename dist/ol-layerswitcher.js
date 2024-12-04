@@ -199,12 +199,12 @@ class LayerSwitcher extends Control {
      */
     updateButton() {
         if (this.element.classList.contains(this.shownClassName)) {
-            this.button.textContent = this.collapseLabel;
+            this.button.innerHTML = this.collapseLabel;
             this.button.setAttribute('title', this.collapseTipLabel);
             this.button.setAttribute('aria-label', this.collapseTipLabel);
         }
         else {
-            this.button.textContent = this.label;
+            this.button.innerHTML = this.label;
             this.button.setAttribute('title', this.tipLabel);
             this.button.setAttribute('aria-label', this.tipLabel);
         }

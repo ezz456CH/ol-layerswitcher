@@ -243,11 +243,11 @@ export default class LayerSwitcher extends Control {
    */
   protected updateButton(): void {
     if (this.element.classList.contains(this.shownClassName)) {
-      this.button.textContent = this.collapseLabel;
+      this.button.innerHTML = this.collapseLabel;
       this.button.setAttribute('title', this.collapseTipLabel);
       this.button.setAttribute('aria-label', this.collapseTipLabel);
     } else {
-      this.button.textContent = this.label;
+      this.button.innerHTML = this.label;
       this.button.setAttribute('title', this.tipLabel);
       this.button.setAttribute('aria-label', this.tipLabel);
     }
@@ -314,11 +314,15 @@ export default class LayerSwitcher extends Control {
     const ul = document.createElement('ul');
     panel.appendChild(ul);
     // passing two map arguments instead of lyr as we're passing the map as the root of the layers tree
-    LayerSwitcher.renderLayers_(map, map, ul, options, function render(
-      _changedLyr: BaseLayer
-    ) {
-      LayerSwitcher.renderPanel(map, panel, options);
-    });
+    LayerSwitcher.renderLayers_(
+      map,
+      map,
+      ul,
+      options,
+      function render(_changedLyr: BaseLayer) {
+        LayerSwitcher.renderPanel(map, panel, options);
+      }
+    );
 
     // Create the event.
     const rendercomplete_event = new Event('rendercomplete');
@@ -655,13 +659,14 @@ export default class LayerSwitcher extends Control {
    * @returns {String} UUID
    */
   static uuid(): string {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (
-      c
-    ) {
-      const r = (Math.random() * 16) | 0,
-        v = c == 'x' ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+      /[xy]/g,
+      function (c) {
+        const r = (Math.random() * 16) | 0,
+          v = c == 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      }
+    );
   }
 
   /**

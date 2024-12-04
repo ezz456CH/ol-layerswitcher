@@ -225,7 +225,12 @@ describe('ol.control.LayerSwitcher', function () {
           return jQuery(this).text();
         })
         .get();
-      expect(titles).to.eql(['MinMaxZoom', 'MinMaxRes', 'Bar', 'Combined-Overlay-Group']);
+      expect(titles).to.eql([
+        'MinMaxZoom',
+        'MinMaxRes',
+        'Bar',
+        'Combined-Overlay-Group'
+      ]);
     });
     it('greys out normal layer title label when resolution greater than maxResolution', function () {
       map.getView().setResolution(6000);
@@ -385,8 +390,9 @@ describe('ol.control.LayerSwitcher', function () {
       ).to.be(false);
       expect(cbg.getVisible()).to.be(true);
       expect(
-        jQuery('.layer-switcher label:contains("Combined-Base-Layer")').siblings('input').get(0)
-          .checked
+        jQuery('.layer-switcher label:contains("Combined-Base-Layer")')
+          .siblings('input')
+          .get(0).checked
       ).to.be(true);
     });
     it('Clicking on unchecked base layer shows it', function () {

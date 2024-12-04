@@ -121,16 +121,12 @@ describe('activationMode option', function () {
         startActive: true,
         activationMode: 'click',
         label: label,
-        tipLabel: tipLabel,
+        tipLabel: tipLabel
       });
       map.addControl(switcher);
       switcher.hidePanel();
-      expect(jQuery('.layer-switcher button').text()).to.be(
-        label
-      );
-      expect(jQuery('.layer-switcher button').attr('title')).to.be(
-        tipLabel
-      );
+      expect(jQuery('.layer-switcher button').text()).to.be(label);
+      expect(jQuery('.layer-switcher button').attr('title')).to.be(tipLabel);
       expect(jQuery('.layer-switcher button').attr('aria-label')).to.be(
         tipLabel
       );
@@ -142,13 +138,11 @@ describe('activationMode option', function () {
         startActive: false,
         activationMode: 'click',
         collapseLabel: collapseLabel,
-        collapseTipLabel: collapseTipLabel,
+        collapseTipLabel: collapseTipLabel
       });
       map.addControl(switcher);
       switcher.showPanel();
-      expect(jQuery('.layer-switcher button').text()).to.be(
-        collapseLabel
-      );
+      expect(jQuery('.layer-switcher button').text()).to.be(collapseLabel);
       expect(jQuery('.layer-switcher button').attr('title')).to.be(
         collapseTipLabel
       );
